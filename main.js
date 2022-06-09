@@ -40,38 +40,26 @@ botonCrearAlumno.addEventListener("click", function(e) {
   }
 
   alumnos.push(alumno);
-  insertarAlumno(alumno);
+  crearFilaAlumno(alumno);
 
   nombre.value = "";
   edad.value = "";
   curso.value = "";
 });
 
-const listaAlumnos = document.getElementById("lista-alumnos");
+function crearFilaAlumno (alumno) {
+  const tableBody = document.querySelector("table > tbody");
+  const fila = document.createElement("tr");
+  fila.classList.add("border-b");
 
-function insertarAlumno (alumno) {
-  const itemAlumno = document.createElement("li");
-  itemAlumno.innerText = `${alumno.nombre} (${alumno.edad}) - ${alumno.curso}`
+  const columnasFila = ["nombre", "edad", "curso"];
+  columnasFila.forEach((columna) => {
+    if ( !(columna in alumno) ) return;
+    const colElemento = document.createElement("td");
+    colElemento.classList.add("px-6", "py-4");
+    colElemento.innerText = alumno[columna];
+    fila.append(colElemento);
+  });
   
-  listaAlumnos.append(itemAlumno);
+  tableBody.append(fila);
 }
-
-// const tableBody = document.querySelector("table > tbody");
-
-// function crearFilaAlumno (alumno) {
-//   const fila = document.createElement("tr");
-
-//   const colNombre = document.createElement("td");
-//   // colNombre.innerText = alumno.nombre;
-
-//   const colEdad = document.createElement("td");
-//   // colEdad.innerText = alumno.edad;
-
-//   const colCurso = document.createElement("td");
-//   // colCurso.innerText = alumno.curso;
-
-//   fila.append(colNombre);
-//   console.log(fila);
-// } 
-
-// crearFilaAlumno({ nombre: "Ken", edad: "29", curso: "Javascript" })

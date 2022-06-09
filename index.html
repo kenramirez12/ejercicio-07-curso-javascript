@@ -5,41 +5,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <h1>Crear alumno</h1>
-  <form action="">
-    <label for="">
-      Nombre
-      <input type="text" id="nombre">
-    </label>
-    <br>
-    <label for="">
-      Edad
-      <input type="text" id="edad">
-    </label>
-    <br>
-    <label for="">
-      Curso
-      <input type="text" id="curso">
-    </label>
-    <br>
-    <button type="submit" id="crear-alumno">Crear alumno</button>
-  </form>
-  <hr>
-  <h1>Listado de alumnos</h1>
-  <ol id="lista-alumnos"></ol>
-  <!-- <table border="1">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Edad</th>
-        <th>Curso</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table> -->
+  <div class="container mx-auto pt-4 px-4">
+    <h1 class="text-2xl font-bold mb-4">Crear alumno</h1>
+    <form action="#">
+      <div class="flex flex-col mb-2 max-w-md">
+        <label for="nombre">
+          Nombre
+        </label>
+        <input type="text" id="nombre" class="p-2 border-2 rounded-xl">
+      </div>
+      <div class="flex flex-col mb-2 max-w-md">
+        <label for="edad">
+          Edad
+        </label>
+        <input type="text" id="edad" class="p-2 border-2 rounded-xl">
+      </div>
+      <div class="flex flex-col mb-2 max-w-md">
+        <label for="curso">
+          Curso
+        </label>
+        <input type="text" id="curso" class="p-2 border-2 rounded-xl">
+      </div>
+      <button type="submit" id="crear-alumno" class="bg-blue-500 text-white p-3 rounded-xl hover:bg-blue-800">Crear alumno</button>
+    </form>
+  </div>
+  <hr class="my-4">
+  <div class="container mx-auto px-4 pb-4">
+    <h1 class="text-2xl font-bold mb-4">Listado de alumnos</h1>
+    <ol id="lista-alumnos"></ol>
+    <table class="w-full text-left border">
+      <thead class="text-xs uppercase bg-gray-100">
+        <tr>
+          <th class="px-6 py-3">Nombre</th>
+          <th class="px-6 py-3">Edad</th>
+          <th class="px-6 py-3">Curso</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
