@@ -60,6 +60,22 @@ function crearFilaAlumno (alumno) {
     colElemento.innerText = alumno[columna];
     fila.append(colElemento);
   });
+
+  const colEliminar = document.createElement("td");
+  colEliminar.classList.add("px-6", "py-4");
+
+  const botonEliminar = document.createElement("button");
+  botonEliminar.classList.add("bg-red-600", "hover:bg-red-700", "text-white", "py-1", "px-2", "text-sn", "rounded-lg");
+  botonEliminar.innerText= "Eliminar";
+  
+  botonEliminar.addEventListener("click", function(e) {
+    if ( confirm("¿Estás seguro que deseas realizar esta acción?") ) {
+      e.target.parentElement.parentElement.remove();
+    }
+  });
+
+  colEliminar.append(botonEliminar);
+  fila.append(colEliminar);
   
   tableBody.append(fila);
 }
